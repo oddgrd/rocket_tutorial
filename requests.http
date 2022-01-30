@@ -1,0 +1,12 @@
+http://127.0.0.1:8000/api
+
+###
+
+http://127.0.0.1:8000/api/hello?name=Oddbjørn
+###
+
+http://127.0.0.1:8000/api/hello?name=Oddbjørn&salutation=Greetings
+
+###
+
+http://127.0.0.1:8000/api/delay/2
