@@ -1,12 +1,43 @@
-http://127.0.0.1:8000/api
+GET http://127.0.0.1:8000/api
 
 ###
-
-http://127.0.0.1:8000/api/hello?name=Oddbjørn
-###
-
-http://127.0.0.1:8000/api/hello?name=Oddbjørn&salutation=Greetings
+GET http://127.0.0.1:8000/api/hello?name=Oddbjørn
 
 ###
+GET http://127.0.0.1:8000/api/hello?name=Oddbjørn&salutation=Greetings
 
-http://127.0.0.1:8000/api/delay/2
+###
+GET http://127.0.0.1:8000/api/delay/2
+
+###
+GET http://127.0.0.1:8000/api/protected
+x-api-key: c2VjcmV
+
+###
+GET http://127.0.0.1:8000/api/login
+
+###
+GET http://127.0.0.1:8000/api/session
+
+###
+# @name newHero
+POST http://127.0.0.1:8000/api/heroes
+Content-Type: application/json
+
+{
+  "name": "Homelander",
+  "canFly": true
+}
+
+### Get hero by ID
+GET http://127.0.0.1:8000/api/heroes/1
+
+### Get newest hero
+@addedHeroId={{newHero.response.body.$.id}}
+GET http://localhost:8000/api/heroes/{{addedHeroId}}
+
+### Get all heroes
+GET http://localhost:8000/api/heroes
+
+###
+GET http://localhost:8000/api/counts
